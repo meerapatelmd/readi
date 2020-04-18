@@ -13,7 +13,7 @@ init_readi_object <-
              notes,
              log_details) {
 
-        file_details_section()
+        create_readme_file_details_section()
 
         readme <- readr::read_lines(file = "README.md")
         starting_line <- grep("# File Details", readme)
@@ -47,7 +47,6 @@ init_readi_object <-
                         middle_part,
                         bottom_part)
 
-        set_readi_class()
         output <- new(Class = "Readi", dataframe = middle_part_df, readme = new_readme)
 
         return(output)
