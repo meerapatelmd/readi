@@ -2,10 +2,10 @@
 
 export(Readi)
 export(add_file_details_section)
+export(apply_readi)
 export(attach_to_csv)
-export(cast_readi_object)
 export(create_readme)
-export(init_readi_object)
+export(mk_readi)
 export(update_excel)
 export(update_readme)
 exportClasses(Readi)

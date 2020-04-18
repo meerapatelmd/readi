@@ -1,10 +1,14 @@
-#' Create a Readi object from arguments and an existing README
+#' Create a Readi
+#' A Readi is an S4 object that contains a dataframe of File Details elements pertaining to a specific csv or Excel file os well as the entire README contents of the working directory. This function makes a new Readi S4 Class object using the given parameters.
+#' This is first achived by:
+#' 1. Making a README.md in the working directory if one does not exist, followed by:
+#' 2. Adding a File Details section in the README if that does not exist.
 #' @importFrom readr read_lines
 #' @importFrom tidyr separate
 #' @importFrom dplyr tibble
 #' @export
 
-init_readi_object <-
+mk_readi <-
     function(sources,
              summary,
              path_to_local_r_script,
@@ -13,11 +17,20 @@ init_readi_object <-
              notes,
              log_details) {
 
-        create_readme_file_details_section()
+        ##Making sure the 2 prerequisites for a Readi object are present:
+        ##1. README in the working directory
+                    create_readme()
+        ##2. File Details section in the README
+                    add_file_details_section()
 
+
+        #Reading README
         readme <- readr::read_lines(file = "README.md")
+
+        #Pinpointing starting line of File Details
         starting_line <- grep("# File Details", readme)
 
+        #Splitting File Details into 3 sections: top, middle, and bottom.
         top_part <- readme[1:starting_line]
 
         if (starting_line < length(readme)) {

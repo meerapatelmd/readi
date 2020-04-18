@@ -4,7 +4,17 @@
 \name{Readi-class}
 \alias{Readi-class}
 \alias{Readi}
-\title{Set the Readi object class}
+\title{Set Readi S4 Class
+A Readi object contains the contents of a README File Details section and a dataframe on the same File Details pertaining to a specific Excel or csv file written out of R.}
 \description{
-Set the Readi object class
+Set Readi S4 Class
+A Readi object contains the contents of a README File Details section and a dataframe on the same File Details pertaining to a specific Excel or csv file written out of R.
 }
+\section{Slots}{
+
+\describe{
+\item{\code{dataframe}}{dataframe of the Readi arguments specific to a given dataframe output file}
+
+\item{\code{readme}}{full README read from the README in the working directory as a character vector.}
+}}
+

@@ -1,8 +1,8 @@
-#' Takes a Readi Object and makes the changes to the provided arguments
+#' Takes a Readi Class object and updates the README.md File Details section with the new file details as well as attaches it to the provided csv or Excel file.
 #' @importFrom secretary typewrite
 #' @export
 
-cast_readi_object <-
+apply_readi <-
     function(file, readi_object) {
         update_readme(readi_object = readi_object)
 
