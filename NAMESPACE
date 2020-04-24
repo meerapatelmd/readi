@@ -2,6 +2,7 @@
 
 export(Readi)
 export(add_file_details_section)
+export(apply)
 export(apply_readi)
 export(attach_to_csv)
 export(create_readme)
