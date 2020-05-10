@@ -4,7 +4,7 @@
 \alias{update_excel}
 \title{Update an Excel file with a File Details tab}
 \usage{
-update_excel(readi_object, path_to_excel, ...)
+update_excel(readi_object, path_to_excel)
 }
 \description{
 Update an Excel file with a File Details tab

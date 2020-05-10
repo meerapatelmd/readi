@@ -4,7 +4,7 @@
 #' @export
 
 update_excel <-
-    function(readi_object, path_to_excel, ...) {
+    function(readi_object, path_to_excel) {
 
         xlsx::write.xlsx(x = readi_object@dataframe,
                          file = path_to_excel,
