@@ -31,9 +31,9 @@ make_readi <-
             bottom_part <- "\n"
         }
 
-        readi_df <- make_readi_df(sources,
-                                  output_file,
-                                  summary,
+        readi_df <- make_readi_df(Sources = sources,
+                                  "Output File" = output_file,
+                                  Summary = summary,
                                   ...,
                                   disable_rstudioapi = disable_rstudioapi)
 

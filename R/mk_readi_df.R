@@ -9,7 +9,7 @@ make_readi_df <-
         Args <- list(...)
         Args <-
             Args %>%
-            rubix::map_names_set(function(x) paste(x, collapse = "\n"))
+            rubix::map_names_set(function(x) paste(x, collapse = ",\n"))
 
         ##Making standard components
         ##Getting GitHub link if there isn't a remote, returns a message say so
