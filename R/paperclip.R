@@ -16,12 +16,12 @@ paperclip <-
 
         update_readme(readi_object = readi_object)
 
-         if (grepl("[.]csv$", file, ignore.case = TRUE) == TRUE) {
+         if (grepl("[.]csv$", destination_file, ignore.case = TRUE) == TRUE) {
 
                     attach_to_csv(readi_object = readi_object,
                                   path_to_csv = file)
 
-         } else if (grepl("[.]xlsx$", file, ignore.case = TRUE) == TRUE) {
+         } else if (grepl("[.]xlsx$", destination_file, ignore.case = TRUE) == TRUE) {
 
                     update_excel(path_to_excel = file,
                                  readi_object = readi_object)
