@@ -18,7 +18,7 @@ view_notes <-
                 secretary::typewrite_note("No notes found in R.cache dir", crayon::italic(basename(getwd())))
 
             } else {
-                return(output)
+                return(saved_notes)
 
             }
     }
