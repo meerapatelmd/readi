@@ -1,6 +1,16 @@
 2020-05-07 23:49:00 	File Created
 
 # Typewrite Messages
+Timestamp:	2020-05-13 18:15:28
+Local R Script:	~/GitHub/Public-Packages/readi/R/trace_objects.R
+Typewrite Message:	No deleted files in this repo.
+Timestamp:	2020-05-13 16:52:29
+Local R Script:	~/GitHub/Public-Packages/readi/R/view_notes.R
+Typewrite Message:	No deleted files in this repo.
+Timestamp:	2020-05-13 16:52:29
+Local R Script:	~/GitHub/Public-Packages/readi/R/view_notes.R
+Typewrite Message:	No untracked files in this repo.
+
 Timestamp:	2020-05-12 20:16:59
 Local R Script:	~/GitHub/Public-Packages/readi/R/make_readi.R
 Typewrite Message:	No deleted files in this repo.
