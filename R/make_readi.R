@@ -31,11 +31,32 @@ make_readi <-
             bottom_part <- "\n"
         }
 
-        readi_df <- make_readi_df(Sources = sources,
-                                  "Output File" = output_file,
-                                  Summary = summary,
-                                  ...,
-                                  disable_rstudioapi = disable_rstudioapi)
+        # readi_df <- make_readi_df(Sources = sources,
+        #                           "Output File" = output_file,
+        #                           Summary = summary,
+        #                           ...,
+        #                           disable_rstudioapi = disable_rstudioapi)
+
+        notes_df <- view_notes()
+        if (!is.null(notes_df)) {
+            notes <-
+            notes_df %>%
+                dplyr::transmute(Notes = paste0(Timestamp, "\t", Note, "\n")) %>%
+                unlist()
+
+            readi_df <- make_readi_df(Sources = sources,
+                                      "Output File" = output_file,
+                                      Summary = summary,
+                                      Notes = notes,
+                                      ...,
+                                      disable_rstudioapi = disable_rstudioapi)
+        } else {
+            readi_df <- make_readi_df(Sources = sources,
+                                      "Output File" = output_file,
+                                      Summary = summary,
+                                      ...,
+                                      disable_rstudioapi = disable_rstudioapi)
+        }
 
 
         ##Writing middle part
