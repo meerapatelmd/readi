@@ -12,7 +12,7 @@ make_Bookmark <-
         Bookmark_obj <- new("Bookmark")
         Bookmark_obj@trace <- Trace_obj
 
-        object_pointers <- paste(paste0(Bookmark_obj@trace@trace_dataframe$`Object Name`, " <- "), collapse = "|")
+        object_pointers <- paste(paste0(Trace_obj@trace_dataframe$`Object Name`, " <- "), collapse = "|")
         code_lines <- readr::read_lines(Bookmark_obj@trace@r_script)
         code_lines_df <-
             tibble::tibble(line_number = 1:length(code_lines),
