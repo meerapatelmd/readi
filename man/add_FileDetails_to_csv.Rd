@@ -7,5 +7,5 @@
 add_FileDetails_to_csv(FileDetails_obj, path_to_csv, commit = TRUE)
 }
 \description{
-Add Readi object to a csv file by converting it into Excel
+The csv file is deleted at the conclusion.
 }

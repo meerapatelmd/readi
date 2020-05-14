@@ -1,5 +1,5 @@
 #' Add Readi object to a csv file by converting it into Excel
-#' @desription The csv file is deleted at the conclusion.
+#' @description The csv file is deleted at the conclusion.
 #' @importFrom readr read_csv
 #' @importFrom cave strip_fn
 #' @importFrom openxlsx write.xlsx
