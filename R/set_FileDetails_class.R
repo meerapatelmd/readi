@@ -10,8 +10,8 @@ FileDetails <- setClass("FileDetails",
                                        add_on = "tbl_df",
                                        notes = "tbl_df",
                                        text = "character"),
-                        prototype(standard = "",
+                        prototype(standard = NA_character_,
                                   add_on = NA_character_,
                                   notes = NA_character_,
-                                  text = ""))
+                                  text = NA_character_))
 

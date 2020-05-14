@@ -4,9 +4,6 @@
 #' @importFrom dplyr select
 #' @export
 
-sources <- "test"
-output_file <- "test"
-summary <- "test"
 
 make_FileDetails <-
     function(sources,
@@ -41,11 +38,22 @@ make_FileDetails <-
 
         #return(output)
 
+        output_a <- output@standard
+
+        if (is.data.frame(output@notes)) {
+            output_a <-
+                dplyr::bind_rows(output_a,
+                                 output@notes)
+        }
+
+        if (is.data.frame(output@add_on)) {
+            output_a <-
+                dplyr::bind_rows(output_a,
+                                 output@add_on)
+        }
+
         output@text <-
-                        dplyr::bind_rows(output@standard,
-                                         output@add_on,
-                                         output@notes
-                                          )  %>%
+                        output_a %>%
                         dplyr::transmute(Readme = paste0(Topic, ":\t", Details)) %>%
                         dplyr::select(Readme) %>%
                         unlist() %>%
