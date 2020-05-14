@@ -1,5 +1,6 @@
 #' Creates a README.md in the working directory if it doesn't exist
 #' @importFrom readr read_lines
+#' @importFrom stampede stamp_this
 #' @export
 
 create_readme <-
