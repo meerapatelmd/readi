@@ -4,4 +4,10 @@
 #' @slot readme_section vector of the README 'File Details' section
 #' @export FileDetails
 #' @exportClass FileDetails
-FileDetails <- setClass("FileDetails", representation(dataframe = "tbl_df", readme = "character"))
+
+FileDetails <- setClass("FileDetails",
+                        representation(standard = "tbl_df",
+                                       add_on = "tbl_df",
+                                       notes = "tbl_df",
+                                       text = "character"))
+
