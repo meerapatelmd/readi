@@ -4,6 +4,10 @@
 #' @importFrom dplyr select
 #' @export
 
+sources <- "test"
+output_file <- "test"
+summary <- "test"
+
 make_FileDetails <-
     function(sources,
              output_file,
@@ -19,8 +23,10 @@ make_FileDetails <-
                                                             disable_rstudioapi = disable_rstudioapi)
 
         if (!missing(...)) {
+
                 output@add_on <-
                     make_AddOnFileDetailsDF(...)
+
         }
 
         notes_df <- view_notes()
@@ -33,11 +39,13 @@ make_FileDetails <-
                         )
         }
 
+        #return(output)
+
         output@text <-
                         dplyr::bind_rows(output@standard,
                                          output@add_on,
                                          output@notes
-                                         ) %>%
+                                          )  %>%
                         dplyr::transmute(Readme = paste0(Topic, ":\t", Details)) %>%
                         dplyr::select(Readme) %>%
                         unlist() %>%
