@@ -4,7 +4,6 @@
 #' @importFrom dplyr select
 #' @export
 
-
 make_FileDetails <-
     function(sources,
              output_file,
@@ -12,11 +11,12 @@ make_FileDetails <-
              ...,
              disable_rstudioapi = FALSE) {
 
-        output <- new("FileDetails",
-                      standard = make_StandardFileDetailsDF(sources = sources,
+        output <- new("FileDetails")
+
+        output@standard <- make_StandardFileDetailsDF(sources = sources,
                                                             output_file = output_file,
                                                             summary = summary,
-                                                            disable_rstudioapi = disable_rstudioapi))
+                                                            disable_rstudioapi = disable_rstudioapi)
 
         if (!missing(...)) {
                 output@add_on <-
