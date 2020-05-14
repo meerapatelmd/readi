@@ -4,7 +4,13 @@
 \alias{make_FileDetails}
 \title{Make a FileDetails class object}
 \usage{
-make_FileDetails(sources, output_file, summary, disable_rstudioapi = FALSE)
+make_FileDetails(
+  sources,
+  output_file,
+  summary,
+  ...,
+  disable_rstudioapi = FALSE
+)
 }
 \description{
 Make a FileDetails class object

@@ -9,6 +9,7 @@ make_FileDetails <-
     function(sources,
              output_file,
              summary,
+             ...,
              disable_rstudioapi = FALSE) {
 
         output <- new("FileDetails",
@@ -27,8 +28,8 @@ make_FileDetails <-
                     output@notes <-
                         tibble::tibble(Topic = "Notes:",
                                        Details = notes_df %>%
-                                dplyr::transmute(Notes = paste0(Timestamp, "\t", Note, "\n")) %>%
-                                unlist()
+                                           dplyr::transmute(Notes = paste0(Timestamp, "\t", Note, "\n")) %>%
+                                           unlist()
                         )
         }
 
