@@ -8,6 +8,19 @@
 
 add_FileDetails_to_csv <-
     function(FileDetails_obj, path_to_csv, commit = TRUE) {
+        dataframe <- FileDetails_obj@standard
+
+        if (is.data.frame(FileDetails_obj@notes)) {
+            dataframe <-
+                dplyr::bind_rows(dataframe,
+                                 FileDetails_obj@notes)
+        }
+
+        if (is.data.frame(FileDetails_obj@add_on)) {
+            dataframe <-
+                dplyr::bind_rows(dataframe,
+                                 FileDetails_obj@add_on)
+        }
 
         if (commit == FALSE) {
 
@@ -15,9 +28,9 @@ add_FileDetails_to_csv <-
                     new_tab_name <- substr(cave::strip_fn(path_to_csv), 1, 31)
                     new_excel_fn <- paste0(cave::strip_fn(path_to_csv, rm_path = FALSE), ".xlsx")
 
+
                     output <- list()
-                    output[[1]] <- dplyr::bind_rows(FileDetails_obj@standard,
-                                                    FileDetails_obj@add_on)
+                    output[[1]] <- dataframe
                     output[[2]] <- csv_data
 
                     names(output) <- c("File Details", new_tab_name)
@@ -39,8 +52,7 @@ add_FileDetails_to_csv <-
             new_excel_fn <- paste0(cave::strip_fn(path_to_csv, rm_path = FALSE), ".xlsx")
 
             output <- list()
-            output[[1]] <- dplyr::bind_rows(FileDetails_obj@standard,
-                                            FileDetails_obj@add_on)
+            output[[1]] <- dataframe
             output[[2]] <- csv_data
 
             names(output) <- c("File Details", new_tab_name)
