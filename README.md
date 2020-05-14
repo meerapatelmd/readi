@@ -1,6 +1,16 @@
 2020-05-07 23:49:00 	File Created
 
 # Typewrite Messages
+Timestamp:	2020-05-14 00:25:29
+Local R Script:	~/GitHub/Public-Packages/readi/R/make_Bookmark.R
+Typewrite Message:	No deleted files in this repo.
+Timestamp:	2020-05-14 00:25:29
+Local R Script:	~/GitHub/Public-Packages/readi/R/make_Bookmark.R
+Typewrite Message:	No untracked files in this repo.
+
+Timestamp:	2020-05-14 00:24:52
+Local R Script:	~/GitHub/Public-Packages/readi/R/set_EtchASketch_class.R
+Typewrite Message:	No deleted files in this repo.
 Timestamp:	2020-05-13 23:38:19
 Local R Script:	~/GitHub/Public-Packages/readi/R/update_excel.R
 Typewrite Message:	No deleted files in this repo.

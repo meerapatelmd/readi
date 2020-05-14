@@ -1,6 +1,6 @@
 #' Make a Bookmark S4 Class object
 #' @description Bookmarks provide the line of code where objects reported in the Trace object
-#' @importFrom read_lines
+#' @importFrom readr read_lines
 #' @importFrom tibble tibble
 #' @importFrom rubix filter_at_grepl
 #' @importFrom rubix call_mr_clean
