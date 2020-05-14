@@ -5,18 +5,18 @@
 add_FileDetails_to_Excel <-
     function(FileDetails_obj, path_to_excel) {
 
-       dataframe <- output@standard
+       dataframe <- FileDetails_obj@standard
 
-        if (is.data.frame(output@notes)) {
+        if (is.data.frame(FileDetails_obj@notes)) {
             dataframe <-
                 dplyr::bind_rows(dataframe,
-                                 output@notes)
+                                 FileDetails_obj@notes)
         }
 
-        if (is.data.frame(output@add_on)) {
+        if (is.data.frame(FileDetails_obj@add_on)) {
             dataframe <-
                 dplyr::bind_rows(dataframe,
-                                 output@add_on)
+                                 FileDetails_obj@add_on)
         }
 
         excel <- broca::read_full_excel(path_to_excel)
