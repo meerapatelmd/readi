@@ -1,6 +1,17 @@
 2020-05-07 23:49:00 	File Created
 
 # Typewrite Messages
+Timestamp:	2020-05-14 00:29:54
+Local R Script:	~/GitHub/Public-Packages/readi/R/set_Bookmark_class.R
+Typewrite Message:	No untracked files in this repo.
+
+Timestamp:	2020-05-14 00:29:08
+Local R Script:	~/GitHub/Public-Packages/readi/R/set_Bookmark_class.R
+Typewrite Message:	No deleted files in this repo.
+Timestamp:	2020-05-14 00:29:08
+Local R Script:	~/GitHub/Public-Packages/readi/R/set_Bookmark_class.R
+Typewrite Message:	No untracked files in this repo.
+
 Timestamp:	2020-05-14 00:25:29
 Local R Script:	~/GitHub/Public-Packages/readi/R/make_Bookmark.R
 Typewrite Message:	No deleted files in this repo.
