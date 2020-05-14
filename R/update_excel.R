@@ -1,6 +1,5 @@
 #' Update an Excel file with a File Details tab
 #' @importFrom broca read_full_excel
-#' @importFrom xlsx write.xlsx
 #' @export
 
 update_excel <-
