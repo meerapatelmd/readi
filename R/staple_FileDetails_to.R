@@ -1,4 +1,5 @@
-#' Applies a Readi to README.md File Details section with the new file details as well as attaches it to the provided csv or Excel file.
+#' Attach FileDetails to the README.md and Destination File
+#' @description As opposed to "add_" functions, "staple_" functions attach FileDetails to the README.md and destination file in the same function.
 #' @importFrom secretary typewrite
 #' @export
 
@@ -6,7 +7,8 @@ staple_FileDetails_to <-
     function(destination_file,
              sources,
              output_file,
-             summary, ...,
+             summary,
+             ...,
              disable_rstudioapi = FALSE) {
 
         FileDetails_obj <-

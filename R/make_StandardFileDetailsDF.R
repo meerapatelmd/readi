@@ -37,9 +37,3 @@ make_StandardFileDetailsDF <-
         return(tibble::tibble(Topic = names(Standards),
                                             Details = unlist(Standards)))
     }
-
-
-test_ellipsis <-
-    function(...) {
-        print(...)
-    }

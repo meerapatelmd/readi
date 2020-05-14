@@ -2,7 +2,7 @@
 % Please edit documentation in R/staple_FileDetails_to.R
 \name{staple_FileDetails_to}
 \alias{staple_FileDetails_to}
-\title{Applies a Readi to README.md File Details section with the new file details as well as attaches it to the provided csv or Excel file.}
+\title{Attach FileDetails to the README.md and Destination File}
 \usage{
 staple_FileDetails_to(
   destination_file,
@@ -14,5 +14,5 @@ staple_FileDetails_to(
 )
 }
 \description{
-Applies a Readi to README.md File Details section with the new file details as well as attaches it to the provided csv or Excel file.
+As opposed to "add_" functions, "staple_" functions attach FileDetails to the README.md and destination file in the same function.
 }
