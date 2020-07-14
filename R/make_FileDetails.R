@@ -12,52 +12,50 @@ make_FileDetails <-
              ...,
              disable_rstudioapi = FALSE) {
 
-        output <- new("FileDetails")
+                    output <- new("FileDetails")
 
-        output@standard <- make_StandardFileDetailsDF(sources = sources,
-                                                            output_file = output_file,
-                                                            summary = summary,
-                                                            disable_rstudioapi = disable_rstudioapi)
+                    output@standard <-
+                        make_StandardFileDetailsDF(sources = sources,
+                                                   output_file = output_file,
+                                                   summary = summary,
+                                                   disable_rstudioapi = disable_rstudioapi)
 
-        if (!missing(...)) {
+                    if (!missing(...)) {
 
-                output@add_on <-
-                    make_AddOnFileDetailsDF(...)
+                            output@add_on <-
+                                make_AddOnFileDetailsDF(...)
 
-        }
+                    }
 
-        notes_df <- view_notes()
-        if (!is.null(notes_df)) {
-                    output@notes <-
-                        tibble::tibble(Topic = "Notes:",
-                                       Details = notes_df %>%
-                                           dplyr::transmute(Notes = paste0(Timestamp, "\t", Note, "\n")) %>%
-                                           unlist()
-                        )
-        }
+                        notes_df <- view_notes()
+                        if (!is.null(notes_df)) {
+                                    output@notes <-
+                                        tibble::tibble(Topic = "Notes:",
+                                                       Details = notes_df %>%
+                                                                    dplyr::transmute(Notes = paste0(Timestamp, "\t", Note, "\n")) %>% unlist())
 
-        #return(output)
+                        }
 
-        output_a <- output@standard
 
-        if (is.data.frame(output@notes)) {
-            output_a <-
-                dplyr::bind_rows(output_a,
-                                 output@notes)
-        }
+                        output_a <- output@standard
+                        if (is.data.frame(output@notes)) {
+                            output_a <-
+                                dplyr::bind_rows(output_a,
+                                                 output@notes)
+                        }
 
-        if (is.data.frame(output@add_on)) {
-            output_a <-
-                dplyr::bind_rows(output_a,
-                                 output@add_on)
-        }
+                        if (is.data.frame(output@add_on)) {
+                            output_a <-
+                                dplyr::bind_rows(output_a,
+                                                 output@add_on)
+                        }
 
-        output@text <-
-                        output_a %>%
-                        dplyr::transmute(Readme = paste0(Topic, ":\t", Details)) %>%
-                        dplyr::select(Readme) %>%
-                        unlist() %>%
-                        unname()
-        return(output)
+                        output@text <- output_a %>%
+                                        dplyr::transmute(Readme = paste0(Topic, ":\t", Details)) %>%
+                                        dplyr::select(Readme) %>%
+                                        unlist() %>%
+                                        unname()
+                        return(output)
+
     }
 
